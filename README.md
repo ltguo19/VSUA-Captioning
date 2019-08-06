@@ -70,12 +70,13 @@ to extract the geometry relation features and build the geometry graph. This wil
 
 Overall, the data folder should contain these files/folders:
 ```bash
-cocotalk.json         # additional information about images and vocab
-cocotalk_label.h5          # captions cocobu_att               # bottom-up feature
-cocobu_fc                # bottom-up average feature
-coco_img_sg           # scene graph data
-coco_pred_sg_rela.npy    # scene graph vocabularies
-vsua_box_info.pkl      # boxes and width and height of images
+cocotalk.json         	# additional information about images and vocab
+cocotalk_label.h5       # captions 
+cocobu_att              # bottom-up feature
+cocobu_fc               # bottom-up average feature
+coco_img_sg             # scene graph data
+coco_pred_sg_rela.npy   # scene graph vocabularies
+vsua_box_info.pkl       # boxes and width and height of images
 geometry-iou0.2-dist0.5-undirected  # geometry graph data
 ```
 ## Training
