@@ -1,11 +1,11 @@
 
-# [Aligning Linguistic Words and Visual Semantic Units for Image Captioning](https://arxiv.org/pdf/)
+# [Aligning Linguistic Words and Visual Semantic Units for Image Captioning](https://arxiv.org/pdf/1908.02127.pdf)
 
 ## Introduction
 VSUA model represents images as structured graphs where nodes are the so-called Visual Semantic Units (VSUs): object, attribute, and relationship units. Our VSUA model makes use of the alignment nature between caption words and VSUs.
 
 <p align="center">
-  <img src="vsua.jpg" width="50%" title="introduction image">
+  <img src="vsua.jpg" width="60%" title="introduction image">
 </p>
 
 ## Citation
