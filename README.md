@@ -21,10 +21,12 @@ If you find this code useful in your research then please cite
 ## Requirements
 - Cuda-enabled GPU
 - Python 2.7, and PyTorch >= 0.4
-- Cider (already been added as a submodule)
+- [Cider](https://github.com/vrama91/cider) (already been added as a submodule)
 - Optionally:
 	- [coco-caption](https://github.com/tylin/coco-caption) (already been added as a submodule): If you'd like to evaluate BLEU/METEOR/CIDEr scores
 	- [tensorboardX](https://github.com/lanpa/tensorboardX): If you want to visualize the loss histories (needs to install TensorFlow).
+	
+To install all submodules: `git clone --recursive https://github.com/ltguo19/VSUA-Captioning.git`
 
 ## Prepare Data
 For more details and other dataset, see [ruotianluo/self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch/blob/master/data/README.md)
