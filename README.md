@@ -58,8 +58,8 @@ python script/make_bu_data.py --output_dir data/cocobu
 This will create `data/cocobu_fc`, `data/cocobu_att` and `data/cocobu_box`.
 
 ### 3. Download image scene graph data
-We use the scene graph data from [yangxuntu/SGAE](https://github.com/yangxuntu/SGAE). Download the files `coco_pred_sg.zip` and `coco_pred_sg_rela.npy` from this [link](https://drive.google.com/drive/folders/1GvwpchUnfqUjvlpWTYbmEvhvkJTIWWRb?usp=sharing) and put them into the folder `data` and then unzip them.
-`coco_pred_sg.zip` contains scene graph data for each image, including object labels and attributes labels for each box in the adaptive bottom-up data, and the semantic relationship labels between boxes. `coco_pred_sg_rela.npy` contains the vocabularies for the object, attribute and relation labels.
+We use the scene graph data from [yangxuntu/SGAE](https://github.com/yangxuntu/SGAE). Download the files `coco_img_sg.zip` and `coco_pred_sg_rela.npy` from this [link](https://drive.google.com/drive/folders/1GvwpchUnfqUjvlpWTYbmEvhvkJTIWWRb?usp=sharing) and put them into the folder `data` and then unzip them.
+`coco_img_sg.zip` contains scene graph data for each image, including object labels and attributes labels for each box in the adaptive bottom-up data, and the semantic relationship labels between boxes. `coco_pred_sg_rela.npy` contains the vocabularies for the object, attribute and relation labels.
 
 ### 4. Extract geometry relationship data
 Download the files `vsua_box_info.pkl` from this [link](https://drive.google.com/open?id=1G9_ZdjyIprl2wyWCExslWTWOimJf3x8G), which contains the size of each box and the width/height of each image.
