@@ -73,7 +73,8 @@ to extract the geometry relation features and build the geometry graph. This wil
 Overall, the data folder should contain these files/folders:
 ```bash
 cocotalk.json         	# additional information about images and vocab
-cocotalk_label.h5       # captions 
+cocotalk_label.h5       # captions
+coco-train-idxs.p       # cached token file for cider
 cocobu_att              # bottom-up feature
 cocobu_fc               # bottom-up average feature
 coco_img_sg             # scene graph data
@@ -82,10 +83,15 @@ vsua_box_info.pkl       # boxes and width and height of images
 geometry-iou0.2-dist0.5-undirected  # geometry graph data
 ```
 ## Training
+### 1. Cross-entropy loss
 ```bash
-python train_graph.py --gpus 0 --id experiment --geometry_relation True
+python train.py --gpus 0 --id experiment-xe --geometry_relation True
 ```
 The train script will dump checkpoints into the folder specified by `--checkpoint_root` and `--id`.
+### 2. Reinforcement learning with CIDEr reward
+```bash
+python train.py --gpus 0 --id experiment-rl --geometry_relation True --learning_rate 5e-5 --resume_from experiment-xe --resume_from_best True --self_critical_after 0 --max_epochs 50
+```
 
 - `--gpu` specifies the GPU used to run the model. `--id` is the name of this experiment and all information and checkpoints will be dumped to `checkpoint_root/id` folder.
 - `--geometry_relation` specifies the type of relationship to use. True: use geometry relationship, False: use semantic relationship.
