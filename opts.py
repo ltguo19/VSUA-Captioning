@@ -36,13 +36,13 @@ def parse_opt():
     # Model settings
     parser.add_argument('--caption_model', type=str, default="vsua",
                     help='model type: [vsua]')
-    parser.add_argument('--rnn_size', type=int, default=512,
+    parser.add_argument('--rnn_size', type=int, default=1000,
                     help='size of the rnn in number of hidden nodes in each layer')
     parser.add_argument('--num_layers', type=int, default=1,
                     help='number of layers in the RNN')
     parser.add_argument('--rnn_type', type=str, default='lstm',
                     help='rnn, gru, or lstm')
-    parser.add_argument('--input_encoding_size', type=int, default=512,
+    parser.add_argument('--input_encoding_size', type=int, default=1000,
                     help='the encoding size of each token in the vocabulary, and the image.')
     parser.add_argument('--att_hid_size', type=int, default=512,
                     help='the hidden size of the attention MLP; only useful in show_attend_tell; 0 if not using hidden layer')
@@ -65,7 +65,7 @@ def parse_opt():
                     help='If 1, then do batch_normalization first in att_embed, if 2 then do bn both in the beginning and the end of att_embed')
 
     # Optimization: General
-    parser.add_argument('--max_epochs', type=int, default=-1,
+    parser.add_argument('--max_epochs', type=int, default=30,
                     help='number of epochs')
     parser.add_argument('--batch_size', type=int, default=10,
                     help='minibatch size')
@@ -93,9 +93,9 @@ def parse_opt():
                     help='weight_decay')
 
     # learning rate
-    parser.add_argument('--learning_rate', type=float, default=4e-4,
+    parser.add_argument('--learning_rate', type=float, default=3e-4,
                     help='learning rate')
-    parser.add_argument('--learning_rate_decay_start', type=int, default=-1,
+    parser.add_argument('--learning_rate_decay_start', type=int, default=0,
                     help='at what epoch to start decaying learning rate? (-1 = dont)')
     parser.add_argument('--learning_rate_decay_every', type=int, default=3,
                     help='every how many iterations thereafter to drop LR?(in epoch)')
@@ -103,7 +103,7 @@ def parse_opt():
                     help='every how many iterations thereafter to drop LR?(in epoch)')
 
     # scheduled sampling
-    parser.add_argument('--scheduled_sampling_start', type=int, default=-1,
+    parser.add_argument('--scheduled_sampling_start', type=int, default=0,
                     help='at what iteration to start decay gt probability')
     parser.add_argument('--scheduled_sampling_increase_every', type=int, default=5,
                     help='every how many iterations thereafter to gt probability')
@@ -123,7 +123,7 @@ def parse_opt():
     parser.add_argument('--checkpoint_path', type=str, default='',
                     help='directory to store current checkpoint, \
                          if not set, it will be assigned as (args.checkpoint_root, args.id) by default. ')
-    parser.add_argument('--language_eval', type=int, default=0,
+    parser.add_argument('--language_eval', type=int, default=1,
                     help='Evaluate language as well (1 = yes, 0 = no)? BLEU/CIDEr/METEOR/ROUGE_L/SPICE? requires coco-caption code from Github.')
     parser.add_argument('--log_loss_every', type=int, default=10,
                     help='How often do we snapshot losses, for inclusion in the progress dump? (0 = disable)')
